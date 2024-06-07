@@ -22,3 +22,15 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # Configuración para un validador de email que chequea el dominio contra un valor no permitido
+    App\Validator\EmailDomainValidator:
+        tags:
+            - { name: validator.constraint_validator, alias: app.email_domain_validator }
+
+    # Configuración para un event subscriber que registra en un fichero de log cada visita a cualquier página.
+    App\EventSubscriber\RequestLoggerSubscriber:
+        tags:
+            - { name: kernel.event_subscriber }
+        arguments:
+            - '@logger'
