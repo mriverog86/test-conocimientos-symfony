@@ -361,7 +361,21 @@ git clone <URL_DEL_REPOSITORIO_REMOTO>
 ```
 
 3. **Pregunta Teórica:**
-- Explica qué es un "branch" (rama) en Git y para qué se utiliza.
+
+Explica qué es un "branch" (rama) en Git y para qué se utiliza.
+
+>  Git no almacena los datos de forma incremental (guardando solo diferencias), sino que los almacena como una serie de instantáneas (copias puntuales de los archivos completos, 
+> tal y como se encuentran en ese momento). En cada confirmación de cambios (commit), Git almacena una instantánea de tu trabajo preparado. 
+> Dicha instantánea contiene además unos metadatos con el autor y el mensaje explicativo, y uno o varios apuntadores a las confirmaciones (commit) que sean padres directos de esta 
+> (un padre en los casos de confirmación normal, y múltiples padres en los casos de estar confirmando una fusión (merge) de dos o más ramas).
+> 
+> Una rama Git es simplemente un apuntador móvil apuntando a una de esas confirmaciones. 
+> La rama por defecto de Git es la rama (master o main). Con la primera confirmación de cambios que realicemos, se creará esta rama principal master apuntando a dicha confirmación. 
+> En cada confirmación de cambios que realicemos, la rama irá avanzando automáticamente.
+> 
+> Las ramas se usan cuando en el proyecto se encuentren muchos usuarios que necesiten acceso a los archivos del proyecto, como cada rama es un entorno independiente, 
+> cada usuario podrá modificar los archivos según sea necesario y no altere los archivos de los demás usuarios en sus respectivas Ramas. Permite desarrollar nuevas funcionalidades,
+> resolver errores o liberar versiones sin afectar el trabajo de otros desarrolladores.
 
 4. **Pregunta de Comandos:**
 
